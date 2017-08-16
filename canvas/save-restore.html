@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>保存和恢复图形的变换</title>
+</head>
+<body>
+	<canvas id="myCanvas" width="300" height="300" style="border:1px solid #ccc;"></canvas>
+
+	<script type="text/javascript">
+	var canvas=document.getElementById("myCanvas");
+	var ctx=canvas.getContext("2d");
+
+	//调用save（）方法后，当时所有的设置都会被放入一个栈结构，然后再对上下文进行其他修改
+	//调用restore（）回到最近的一个save（）状态，一级一级返回
+	//注意save（）方法保存的只是对绘图上下文的设置和变换，不会保存内容
+
+	//绘制粉色蓝边矩形
+	ctx.fillStyle="pink";
+	ctx.strokeStyle="blue";
+	ctx.fillRect(20,20,100,100);
+	ctx.strokeRect(20,20,100,100);
+	ctx.fill();
+	ctx.stroke();
+	ctx.save();  //保存当前设置
+
+	//绘制另外一个黄色绿边矩形
+	ctx.fillStyle="yellow";
+	ctx.strokeStyle="green";
+	ctx.fillRect(140,20,100,100);
+	ctx.strokeRect(140,20,100,100);
+	ctx.fill();
+	ctx.stroke();
+	ctx.save();
+
+	//恢复第二个矩形的设置
+	ctx.restore();
+	//绘制两个矩形
+	ctx.fillRect(20,140,50,50);
+	ctx.strokeRect(80,140,50,50);
+
+	//恢复第一个矩形的设置
+	ctx.restore();
+	//继续绘制两个矩形
+	ctx.fillRect(20,220,50,50);
+	ctx.strokeRect(80,220,50,50);
+
+	</script>
+</body>
+</html>

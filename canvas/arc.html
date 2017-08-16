@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>绘制圆形</title>
+</head>
+<body>
+	<canvas id="myArc" width="500" height="300" style="border:1px solid #ccc;"></canvas>
+	<script type="text/javascript">
+	var arc=document.getElementById("myArc");
+	var ctx=arc.getContext("2d");
+
+	//画一个红色圆
+	//ctx.arc(x,y,radius,startAngle,endAngle,anticlockwise)表示圆心坐标为（100,75），半径为50，开始角度为0，结束角度为2pai，false表示顺时针画
+	ctx.fillStyle="#ff0000";
+	ctx.beginPath();
+	ctx.arc(100,75,50,0,2*Math.PI,false);
+	ctx.closePath();
+	ctx.fill(); //表示填充
+
+	//画一个粉色圆
+	ctx.fillStyle="pink";
+	ctx.beginPath();
+	ctx.arc(200,75,50,0,2*Math.PI,false);
+	ctx.closePath();
+	ctx.fill();
+
+	//画两个同心圆
+	ctx.strokeStyle="red";
+	ctx.beginPath();
+	//外圆
+	ctx.arc(100,200,50,0,2*Math.PI,false);
+	ctx.closePath();
+	//内圆
+	ctx.arc(100,200,30,0,2*Math.PI,false);
+	ctx.closePath();
+	ctx.stroke();
+
+	</script>
+</body>
+</html>

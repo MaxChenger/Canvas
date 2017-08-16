@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>绘制空心三角形</title>
+</head>
+<body>
+	<canvas id="myCanvas" width="200" height="200" style="border:1px solid #ccc"></canvas>
+
+	<script type="text/javascript">
+	var triangle=document.getElementById("myCanvas");
+	var ctx=triangle.getContext("2d");
+
+	ctx.strokeStyle="blue";
+	ctx.beginPath();
+	ctx.moveTo(25,25);
+	ctx.lineTo(150,25);
+	ctx.lineTo(25,150);
+	ctx.closePath(); //记得一定要关闭！
+	ctx.stroke();
+	</script>
+</body>
+</html>

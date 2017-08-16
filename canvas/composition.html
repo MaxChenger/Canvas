@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>图形的组合和裁切clip()</title>
+</head>
+<body>
+	<canvas id="myCanvas" width="300" height="300" style="border:1px solid #ccc"></canvas>
+	<script type="text/javascript">
+		var canvas=document.getElementById("myCanvas");
+		var ctx=canvas.getContext("2d");
+
+		//利用图形的globalCompositionOperation属性的值可以有多种组合，具体看提供的图
+		ctx.globalAlpha=0.5; //让它半透明
+		ctx.fillStyle="red";
+		ctx.fillRect(50,25,100,100);
+
+		ctx.fillStyle="green";
+		ctx.globalCompositionOperation="sourse-over";
+		ctx.beginPath();
+		ctx.arc(150,125,50,0,Math.PI*2,true);
+		ctx.fill();
+	</script>
+</body>
+</html>

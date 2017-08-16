@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>画一个时钟</title>
+</head>
+<body>
+	<canvas id="myCanvas" width="300" height="300" style="border:1px solid #ccc;">
+		You don't support Canvas.If you did,you would see a clock.
+	</canvas>
+	<script type="text/javascript">
+	var canvas=document.getElementById("myCanvas");
+	//确定浏览器支持<canvas>元素
+	//获得2d上下文对象
+	if (canvas.getContext) {
+	var ctx=canvas.getContext("2d");
+	}
+
+	ctx.strokeStyle="red";
+	ctx.fillStyle="#0000ff";
+	</script>
+</body>
+</html>

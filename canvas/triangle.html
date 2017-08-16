@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>绘制实心三角形</title>
+</head>
+<body>
+	<canvas id="myCanvas" width="200" height="200" style="border:1px solid #ccc;"></canvas>
+
+	<script type="text/javascript">
+	var triangle=document.getElementById("myCanvas");
+	var ctx=triangle.getContext("2d");
+
+	//填充颜色
+	ctx.fillStyle="pink";
+	//开始路径
+	ctx.beginPath();
+	//起点坐标（25，25）
+	ctx.moveTo(25,25);
+	ctx.lineTo(150,25);  //横线
+	ctx.lineTo(25,150);  //竖线
+	//开始填充
+	//这里不用closePath（），因为颜色已经填充了
+	ctx.fill();
+	</script>
+</body>
+</html>

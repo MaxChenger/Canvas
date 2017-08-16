@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>绘制矩形</title>
+</head>
+<body>
+	<canvas id="myRect" width="200" height="200">浏览器不支持Canvas元素</canvas>
+	<script type="text/javascript">
+	var drawing=document.getElementById("myRect");
+
+	//确保浏览器支持<cancas>元素
+	//获得2d上下文对象
+	if (drawing.getContext) {
+	var ctx=drawing.getContext("2d");
+	
+ 
+ 	//绘制红色矩形,开始坐标为（10,10）宽高为50，50.
+ 	ctx.fillStyle="#ff0000";
+ 	ctx.fillRect(10,10,50,50);
+
+ 	//绘制半透明的蓝色矩形,开始坐标为（30,30）宽高为50，50.
+ 	ctx.fillStyle="rgba(0,0,255,0.5)";
+ 	ctx.fillRect(30,30,50,50);	
+ }
+
+ 	//在两个矩形重叠的地方清除一个小矩形
+ 	ctx.clearRect(40,40,10,10);
+
+ 	//绘制红色描边矩形
+ 	ctx.strokeStyle="#ff0000";
+ 	ctx.strokeRect(80,80,50,50);
+
+ 	//绘制半透明的蓝色描边矩形
+ 	ctx.strokeStyle="rgba(0,0,255,0.5)";
+ 	ctx.strokeRect(100,100,50,50);
+	</script>
+</body>
+</html>

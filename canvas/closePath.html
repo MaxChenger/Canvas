@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>理解closePath()</title>
+</head>
+<body>
+	<canvas id="myCanvas" width="300" height="150" style="border:1px solid #ccc"></canvas>
+	<script type="text/javascript">
+	var canvas=document.getElementById("myCanvas");
+
+	var ctx=canvas.getContext("2d");
+
+	//不加closePath()
+	for (var i = 0; i < 15; i++) {
+		ctx.strokeStyle="#ff00ff";
+		ctx.beginPath();
+		ctx.arc(0,150,i*10,0,Math.PI*3/2,true);
+		//ctx.closePath();
+		ctx.stroke();
+	}
+
+	//加closePath()
+	for(var j=0;j<15;j++){
+		ctx.strokeStyle="ff00ff";
+		ctx.beginPath();
+		ctx.arc(300,150,j*10,0,Math.PI*5/4,true);
+		ctx.closePath();//会把线的尾部关闭
+		ctx.stroke();
+	}
+	</script>
+</body>
+</html>
