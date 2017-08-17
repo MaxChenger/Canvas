@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>绘制镜像渐变</title>
+</head>
+<body>
+	<canvas id="myCanvas" width="300" height="300" style="border:1px solid #ccc"></canvas>
+	<script type="text/javascript">
+	var canvas=document.getElementById("myCanvas");
+	var ctx=canvas.getContext("2d");
+
+	//createRadialGradient(x1,y1,r1,x2,y2,r2)方法绘制镜像渐变
+
+	var grad=ctx.createRadialGradient(120,120,40,140,140,90);
+	grad.addColorStop(0,"red");
+	grad.addColorStop(1,"green");
+
+	ctx.fillStyle=grad; //设置矩形填充样式为镜像渐变
+	ctx.fillRect(20,20,220,220);
+
+	</script>
+</body>
+</html>

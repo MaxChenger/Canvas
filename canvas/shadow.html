@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>绘制阴影效果</title>
+</head>
+<body>
+	<canvas id="myCanvas" width="200" height="200" style="border:1px solid #ccc"></canvas>
+
+	<script type="text/javascript">
+	var canvas=document.getElementById("myCanvas");
+	var ctx=canvas.getContext("2d");
+
+	//shadowBlur为阴影的像素模糊值
+	//shadowOffsetX,shadowOffsetY为阴影在x轴和y轴上的偏移值
+	//shadowColor为阴影颜色值，前三个默认都为0，最后一个值设置为透明黑色
+
+	ctx.shadowOffsetX=5;  //x轴偏移
+	ctx.shadowOffsetY=5; //y轴偏移
+	ctx.shadowBlur=10;	  //阴影模糊值
+	ctx.shadowColor="#56524c";
+	ctx.fillStyle="pink";
+	ctx.fillRect(50,50,100,100);
+	</script>
+</body>
+</html>

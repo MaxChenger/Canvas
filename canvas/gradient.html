@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>绘制线性渐变</title>
+</head>
+<body>
+	<canvas id="myCanvas" width="300" height="300" style="border:1px solid #ccc"></canvas>
+	<script type="text/javascript">
+	var canvas=document.getElementById("myCanvas");
+	var ctx=canvas.getContext("2d");
+
+	//createLinearGradient(x1,y1,x2,y2)绘制线性渐变的方法
+	//addColorStop(position,color)，position取值为[0,1],0表示起点，1表示终点，color表示要添加的颜色
+
+	//创建线性渐变，开始坐标为（20,20），结束坐标为（220,220）
+	var grad=ctx.createLinearGradient(20,20,220,220);
+	grad.addColorStop(0,"red");	
+	grad.addColorStop(0.5,"green");
+	grad.addColorStop(1,"blue");
+
+	ctx.fillStyle=grad;   //设置矩形的填充样式为线性渐变
+	ctx.fillRect(20,20,200,200);
+	</script>
+</body>
+</html>
+
